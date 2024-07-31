@@ -1,4 +1,4 @@
-import { argbFromHex } from '/@material/material-color-utilities';
+import { argbFromHex } from '@material/material-color-utilities';
 import { setFromSource } from '../internal/colorScheme.js';
 /**
  * 在指定元素上设置配色方案

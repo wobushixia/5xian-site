@@ -25,11 +25,37 @@
         a {
             text-decoration: none;
             color: black;
+            transition: 0.4s;
+        }
+
+        a:hover{
+            text-decoration: underline;
         }
 
         h4 {
             color: #b9b7b7;
             font-weight: normal;
+        }
+
+        mdui-linear-progress {
+            --shape-corner: 3px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: center;
+        }
+
+        a {
+            color: rgb(88, 88, 88);
+        }
+
+        info{
+            color: rgb(88, 88, 88);
         }
     </style>
     <title>5xian-Site</title>
@@ -38,15 +64,25 @@
 <body>
     <!--Tab选项卡-->
     <mdui-tabs value="tab-1">
-        <mdui-tab value="tab-1"><img src="Pictures/TouXiang.jpg" alt="MikuLogo" style="width: 30px;"></mdui-tab>
+        <mdui-tab value="tab-1"><mdui-avatar style="width:30px;height:30px;"><img src="Pictures/TouXiang.jpg" style="width:30px;" alt="MikuLogo"></mdui-avatar></mdui-tab>
         <mdui-tab value="tab-2">网站</mdui-tab>
         <mdui-tab value="tab-3">音乐</mdui-tab>
-        <mdui-tab value="tab-4">计划</mdui-tab>
-        <mdui-tab value="tab-5">关于</mdui-tab>
+        <mdui-tab value="tab-4">图片</mdui-tab>
+        <mdui-tab value="tab-5">计划</mdui-tab>
+        <mdui-tab value="tab-6">BLOG</mdui-tab>
 
         <mdui-tab-panel slot="panel" value="tab-1">
             <h1 style="text-align: center;">你好,欢迎来到“5xian-Site”</h1>
-            <h3>本网站使用<a target="_blank" href="https://www.mdui.org/zh-cn"><code>mdui</code></a>作为组件库</h3>
+            <mdui-divider middle></mdui-divider>
+            <h1>关于网站</h1>
+            <h3>本网站围绕<a href="https://mzh.moegirl.org.cn/%E5%88%9D%E9%9F%B3%E6%9C%AA%E6%9D%A5">初音未来</a>主题进行编写</h3>
+            <h5>---别问我为什么网站不用#39c5bb色---</h5>
+            <h5>---因为我调用<code>setColorScheme</code>时总是报一些奇奇怪怪的错误XD---</h5>
+            <mdui-divider middle></mdui-divider>
+            <h1>网站信息</h1>
+            <h3>网站成立于:2024/7/31</h3>
+            <h3>网站所有者:5xian_39</h3>
+            <h3>组件库:<a target="_blank" href="https://www.mdui.org/zh-cn">MD-UI</a></h3>
         </mdui-tab-panel>
 
         <mdui-tab-panel slot="panel" value="tab-2">
@@ -55,14 +91,14 @@
                 <mdui-list>
                     <mdui-list-subheader>图片资源站</mdui-list-subheader>
                     <mdui-tooltip content="内涵初音未来照片喔">
-                        <mdui-list-item href="https://sekai.best" targrt="_blank">
+                        <mdui-list-item href="https://sekai.best" targrt="blank">
                             Sekai Viewer
                             <mdui-avatar slot="icon" src="https://sekai.best/favicon.ico"></mdui-avatar>
                             <span slot="description">世界计划资源浏览站</span>
                         </mdui-list-item>
                     </mdui-tooltip>
                     <mdui-tooltip content="可以制作初音未来表情包">
-                        <mdui-list-item href="https://st.3kn.jp" target="_blank">
+                        <mdui-list-item href="https://st.3kn.jp" target="blank">
                             Sekai Sticker
                             <mdui-avatar slot="icon" src="https://st.3kn.jp/favicon.ico"></mdui-avatar>
                             <span slot="description">世界计划表情制作站</span>
@@ -74,7 +110,7 @@
                 <mdui-list>
                     <mdui-list-subheader>有趣游玩站</mdui-list-subheader>
                     <mdui-tooltip content="其实就是一个小型的声库，随处点点就可以创作一首好听的音乐啦">
-                        <mdui-list-item href="https://miku.sci-fifans.net" target=")blank">
+                        <mdui-list-item href="https://miku.sci-fifans.net" target="blank">
                             MikuTap
                             <mdui-avatar slot="icon" src="https://miku.sci-fifans.net/favicon.ico"></mdui-avatar>
                             <span slot="description">初音未来声音体验站</span>
@@ -83,39 +119,41 @@
                 </mdui-list>
             </mdui-card>
         </mdui-tab-panel>
-            
+
         <mdui-tab-panel slot="panel" value="tab-3">
             <h4>好听的音乐</h4>
             <mdui-card style="width: 100%;">
                 <mdui-list>
                     <mdui-list-subheader>R Sound Design专区</mdui-list-subheader>
                     <mdui-tooltip content="两种层面上的“神曲”">
-                        <mdui-list-item href="https://www.bilibili.com/video/BV1Kt4y1Q7Y6">
+                        <mdui-list-item href="https://www.bilibili.com/video/BV1Kt4y1Q7Y6" target="blank">
                             神曲
                             <mdui-avatar slot="icon" src="MusicIcon/神曲.png"></mdui-avatar>
                             <span slot="description">R Sound Design</span>
                         </mdui-list-item>
                     </mdui-tooltip>
-                    <mdui-tooltip content="Daphne（沈丁花）Ficus（无花果）Iris（菖蒲）Maackia（犬槐）Lythrum（禊萩）Myrica（山桃）Sabia（青葛）Flos（花儿们）">
-                        <mdui-list-item href="https://www.bilibili.com/video/BV1Gi4y1g77Q">
+                    <mdui-tooltip
+                        content="Daphne（沈丁花）Ficus（无花果）Iris（菖蒲）Maackia（犬槐）Lythrum（禊萩）Myrica（山桃）Sabia（青葛）Flos（花儿们）">
+                        <mdui-list-item href="https://www.bilibili.com/video/BV1Gi4y1g77Q" target="blank">
                             Flos
                             <mdui-avatar slot="icon" src="MusicIcon/flos.png"></mdui-avatar>
                             <span slot="description">R Sound Design</span>
                         </mdui-list-item>
                     </mdui-tooltip>
-                    <mdui-tooltip content="帝国少女，又或是啼哭少女？爱的话语，爱的气息">
-                        <mdui-list-item href="https://www.bilibili.com/video/BV1Ni4y1g7oN">
+                    <mdui-tooltip content="帝国少女，亦或是啼哭少女？">
+                        <mdui-list-item href="https://www.bilibili.com/video/BV1Ni4y1g7oN" target="blank">
                             帝国少女
                             <mdui-avatar slot="icon" src="MusicIcon/帝国少女.png"></mdui-avatar>
                             <span slot="description">R Sound Design</span>
                         </mdui-list-item>
                     </mdui-tooltip>
                 </mdui-list>
+
                 <mdui-card style="width: 100%; margin:40px auto auto auto;">
                     <mdui-list>
                         <mdui-list-subheader>Ayase专区</mdui-list-subheader>
                         <mdui-tooltip content="我的时间 与 这个城市 -Trade-">
-                            <mdui-list-item href="https://www.bilibili.com/video/BV1ii4y1c7it">
+                            <mdui-list-item href="https://www.bilibili.com/video/BV1ii4y1c7it" target="blank">
                                 幽灵东京
                                 <mdui-avatar slot="icon" src="MusicIcon/幽灵东京.png"></mdui-avatar>
                                 <span slot="description">Ayase</span>
@@ -124,16 +162,65 @@
                     </mdui-list>
                 </mdui-card>
             </mdui-card>
+
+            <mdui-card style="width: 100%;">
+                <mdui-list>
+                    <mdui-list-subheader>R-096专区</mdui-list-subheader>
+                    <mdui-dropdown>
+                        <mdui-list-item slot="trigger">
+                            圆形监狱
+                            <mdui-avatar slot="icon" src="MusicIcon/圆形监狱.png"></mdui-avatar>
+                            <span slot="description">R-096</span>
+                        </mdui-list-item>
+                        <mdui-menu>
+                            <mdui-tooltip content="<2021重置版>无限循坏的 7days">
+                                <mdui-menu-item href="https://www.bilibili.com/video/BV11b411Q7hy">パノプティコン
+                                    2021</mdui-menu-item>
+                            </mdui-tooltip>
+                            <mdui-tooltip content="无限循坏的 7days">
+                                <mdui-menu-item
+                                    href="https://www.bilibili.com/video/BV1H5411x7ep">パノプティコン</mdui-menu-item>
+                            </mdui-tooltip>
+                        </mdui-menu>
+                    </mdui-dropdown>
+                </mdui-list>
+            </mdui-card>
         </mdui-tab-panel>
 
         <mdui-tab-panel slot="panel" value="tab-4">
-
+            <h4>好看的图片</h4>
         </mdui-tab-panel>
 
         <mdui-tab-panel slot="panel" value="tab-5">
+            <h4>精密的计划</h4>
+            <div class="Task">
+                <span>建模</span>
+                <mdui-linear-progress value="0.1"></mdui-linear-progress>
+                <span>网站</span>
+                <mdui-linear-progress value="0.2"></mdui-linear-progress>
+                <span>启动器主页</span>
+                <mdui-linear-progress value="0.6"></mdui-linear-progress>
+                <span>我的世界客户端</span>
+                <mdui-linear-progress value="0.3"></mdui-linear-progress>
+            </div>
+        </mdui-tab-panel>
 
+        <mdui-tab-panel slot="panel" value="tab-6">
+            <mdui-card style="padding:20px;margin:10px;">
+                <mdui-avatar src="Pictures/TouXiang.jpg"></mdui-avatar>
+                <span>&nbsp;BLOG&nbsp;<b>自我介绍</b></span>
+                <mdui-divider style="margin-top:8px;"></mdui-divider>
+                <h3 style="text-align: left;">你好！我叫5xian39</h3>
+                <mdui-divider style="margin-top:8px;"></mdui-divider>
+                <p>Age: <info>11</info></p>
+                <p>BiliBili: <mdui-tooltip content="跳转至我的BiliBili"><a href="https://space.bilibili.com/286975446">286975446</a></mdui-tooltip></p>
+                <p>Birthday: <mdui-tooltip content="没错，和初音未来一天生日喔~"><a href="#">8/31</a></mdui-tooltip></p>
+                <mdui-divider style="margin-top:8px; margin-bottom: 10px;"></mdui-divider>
+                <mdui-tooltip variant="rich" onclick="copyURL()" headline="复制链接" content="如果你觉得有价值,可以点击这个按钮将这个链接复制后转发或存放在自己的文件上"><mdui-button variant="outlined">Share</mdui-button></mdui-tooltip>
+            </mdui-card>
         </mdui-tab-panel>
     </mdui-tabs>
 </body>
-
+<script>
+</script>
 </html>

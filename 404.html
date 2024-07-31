@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./mdui/mdui.css">
+    <script src="./mdui/mdui.global.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Oops!</h1>
+    <h1>404 Page Not Found</h1>
+    <mdui-dialog close-on-overlay-click class="example-action">
+        <span slot="headline">为什么我会出现在这？</span>
+        <span slot="description">可能是由于你在本网站重定向时去往了一个不存在的页面</span>
+        <mdui-button slot="action" class="CloseBtn" variant="text">取消</mdui-button>
+        <mdui-button href="index.html" slot="action">返回主站</mdui-button>
+    </mdui-dialog>
+    <mdui-button href="index.html">返回主站</mdui-button>
+    <mdui-button class="openDialog">为何出现在这？</mdui-button>
+</body>
+<script>
+    const dialog = document.querySelector(".example-action");
+    const openButton = document.querySelector('.openDialog');
+    const closeButton = dialog.querySelector(".CloseBtn");
+
+    openButton.addEventListener("click", () => dialog.open = true);
+    closeButton.addEventListener("click", () => dialog.open = false);
+  </script>
+</html>
