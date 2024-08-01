@@ -15,21 +15,30 @@
             text-align: center;
         }
 
+        span,
+        p,
+        b {
+            color: #39c5bb;
+        }
+
         code {
-            background-color: rgba(114, 114, 114, 0.253);
-            color: black;
+            background-color: rgba(201, 201, 201, 0.164);
+            color: #5DD6F4;
             padding: 4px;
             border-radius: 3px;
+            font-family: sans-serif;
         }
 
         a {
             text-decoration: none;
-            color: black;
+            color: #32CBF1;
             transition: 0.4s;
+            padding: 4px;
+            border-radius: 4px;
         }
 
-        a:hover{
-            text-decoration: underline;
+        a:hover {
+            box-shadow: #39c5bb 0 0 10px;
         }
 
         h4 {
@@ -41,6 +50,22 @@
             --shape-corner: 3px;
         }
 
+        .left {
+            text-align: left;
+            align-items: center;
+        }
+
+        .center {
+            text-align: center;
+            align-items: center;
+            list-style-position:inside;
+        }
+
+        .right {
+            text-align: right;
+            align-items: center
+        }
+
         h1,
         h2,
         h3,
@@ -48,14 +73,30 @@
         h5,
         h6 {
             text-align: center;
+            color: #39c5bb;
         }
 
-        a {
+        info {
             color: rgb(88, 88, 88);
         }
 
-        info{
-            color: rgb(88, 88, 88);
+        h4 {
+            display: flex;
+            font-size:x-large;
+            width: 98%;
+            height: 70px;
+            box-shadow: #5DD6F4 0 0 5px;
+            justify-content: center;
+            align-items: center;
+            margin-left:1%;
+            border-radius: 6px;
+        }
+        img{
+            resize: both;
+        }
+        margin{
+            margin-top: 6px;
+            margin-bottom: 6px;
         }
     </style>
     <title>5xian-Site</title>
@@ -64,7 +105,8 @@
 <body>
     <!--Tab选项卡-->
     <mdui-tabs value="tab-1">
-        <mdui-tab value="tab-1"><mdui-avatar style="width:30px;height:30px;"><img src="Pictures/TouXiang.jpg" style="width:30px;" alt="MikuLogo"></mdui-avatar></mdui-tab>
+        <mdui-tab value="tab-1"><mdui-avatar style="width:30px;height:30px;"><img src="Pictures/TouXiang.jpg"
+                    style="width:30px;" alt="MikuLogo"></mdui-avatar></mdui-tab>
         <mdui-tab value="tab-2">网站</mdui-tab>
         <mdui-tab value="tab-3">音乐</mdui-tab>
         <mdui-tab value="tab-4">图片</mdui-tab>
@@ -195,7 +237,7 @@
             <h4>精密的计划</h4>
             <div class="Task">
                 <span>建模</span>
-                <mdui-linear-progress value="0.1"></mdui-linear-progress>
+                <mdui-linear-progress value="0.3"></mdui-linear-progress>
                 <span>网站</span>
                 <mdui-linear-progress value="0.2"></mdui-linear-progress>
                 <span>启动器主页</span>
@@ -206,21 +248,80 @@
         </mdui-tab-panel>
 
         <mdui-tab-panel slot="panel" value="tab-6">
-            <mdui-card style="padding:20px;margin:10px;">
+            <mdui-card style="padding:20px;margin:10px;width:100%;">
                 <mdui-avatar src="Pictures/TouXiang.jpg"></mdui-avatar>
-                <span>&nbsp;BLOG&nbsp;<b>自我介绍</b></span>
+                <span>&nbsp;BLOG&nbsp;<b>自我介绍！</b><span style="font-style:italic">更新时间:2024/8/1-20:31</span></span>
                 <mdui-divider style="margin-top:8px;"></mdui-divider>
-                <h3 style="text-align: left;">你好！我叫5xian39</h3>
+                <h2 class="left">很高兴认识你！</h3>
                 <mdui-divider style="margin-top:8px;"></mdui-divider>
-                <p>Age: <info>11</info></p>
-                <p>BiliBili: <mdui-tooltip content="跳转至我的BiliBili"><a href="https://space.bilibili.com/286975446">286975446</a></mdui-tooltip></p>
-                <p>Birthday: <mdui-tooltip content="没错，和初音未来一天生日喔~"><a href="#">8/31</a></mdui-tooltip></p>
-                <mdui-divider style="margin-top:8px; margin-bottom: 10px;"></mdui-divider>
-                <mdui-tooltip variant="rich" onclick="copyURL()" headline="复制链接" content="如果你觉得有价值,可以点击这个按钮将这个链接复制后转发或存放在自己的文件上"><mdui-button variant="outlined">Share</mdui-button></mdui-tooltip>
+                <h3 class="center">关于我的信息</h3>
+                <mdui-divider style="margin-top:8px;"></mdui-divider>
+                <div>
+                    <ul class="father-center">
+                    <li>Name:<info>Xia Yifan</info></li>
+                    <li>Age:<info>11</info>
+                    </li>
+                    <li>Birthday:<mdui-tooltip content="没错，你怎么知道我和初音未来一天生日">
+                            <info>8/31</info>
+                        </mdui-tooltip></li>
+                    <li><b>外部链接:</b></li>
+                    <ul>
+                        <li>BiliBili:<a href="https://space.bilibili.com/286975446">286975446</a></li>
+                        <li>Github:<mdui-tooltip content="别点进去啦，仓库都是一些以前的黑历史"><a href="https://github.com/wobushixia">wobushixia</a></mdui-tooltip></ul>
+                    </ul>
+                </ul>
+            </div>
+                
+            </mdui-card>
+
+
+            <mdui-card style="padding:20px;margin:10px;width:100%;">
+                <mdui-avatar src="Pictures/TouXiang.jpg"></mdui-avatar>
+                <span>&nbsp;BLOG&nbsp;<b>39快报！！</b></span>
+                <mdui-divider style="margin-top:8px;"></mdui-divider>
+                <h3 style="text-align: center;">"将你的故事告诉我吧"</h3>
+                <mdui-divider style="margin-top:8px;"></mdui-divider>
+                <h1>『崩坏的SEKAI与无法歌唱的MIKU』</h1>
+                <img style="clear:both;display: block;margin: auto;" src="Pictures/初音未来剧场版主视图.jpg" alt="">
+                <mdui-divider style="margin-top:8px;"></mdui-divider>
+                <pre>原作 セガ/ Colorful Palette / クリプトン・フューチャー・メディア
+                    監督 畑 博之
+                    脚本 米内山 陽子
+                    キャラクターデザイン／総作画監督 秋山 有希
+                    サブキャラクターデザイン／総作画監督 辻 雅俊
+                    プロップ設定 牧野 博美
+                    美術監督 鈴木 くるみ
+                    美術設定 塩澤 良憲
+                    撮影監督 岩井 和也
+                    色彩設計 手嶋 明美
+                    CGIディレクター 小川 喬右・鈴木 晴輝
+                    編集 髙橋 歩
+                    音響監督 明田川 仁
+                    音響効果 上野 励
+                    音響制作 マジックカプセル
+                    音楽 宝野 聡史
+                    アニメーション制作 P.A.WORKS
+                    配給 松竹
+                    製作 「劇場版プロジェクトセカイ　壊れたセカイと歌えないミク」製作委員会</pre>
+                <mdui-divider style="margin-top:8px;"></mdui-divider>
+                <pre>世界计划多彩舞台 剧场版动画『崩坏的SEKAI与无法歌唱的MIKU』
+                        目前的情报汇总
+                        
+                        图2：动画制作由P.A.WORKS负责，监督畑博之，脚本米内山陽子（跃动青春、派对浪客诸葛孔明、赛马娘等），角色设计、作画监督秋山有希。
+                        图3、4：动画介绍及本作的初音未来形象图公开。
+                        图5：剧场幕间映像及特报映像将于8月2日起公开。
+                        图6：后续情报将于9月27日的世界计划情报局中公开，预计9月公开新预告视频和其他角色形象图，12月公开影院现场特典和动画主题曲情报。
+                        图7：动画主视觉图公开。
+                        </pre>
+                <mdui-divider style="margin-top:8px;"></mdui-divider>
+                我现在就要去b站看！: <a href="https://www.bilibili.com/video/BV16Z421T7G1">点我去b站</a>
+                <mdui-divider style="margin-top:8px;"></mdui-divider>
+                我看到这个消息是十分震惊的，<del>我们初音未来终于不是新疆吐鲁番的辣</del>，于是我第一时间将这个做成了BLOG，也就是你现在看到的样子，没有过多的美化，后续会补充（等我情绪稳定些在说吧）
             </mdui-card>
         </mdui-tab-panel>
     </mdui-tabs>
 </body>
 <script>
 </script>
+
 </html>
